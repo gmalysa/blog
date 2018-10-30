@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <script type="text/javascript"
+          src="//cdnjs.cloudflare.com/ajax/libs/dustjs-linkedin/2.7.2/dust-core.min.js">
+  </script>
+  <script type="text/javascript" src="{@url url="/ui.js" /}"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="//underscorejs.org/underscore-min.js"></script>
+  </script>
+  {#scripts}
+    <script type="text/javascript" src="{@url url="/static/javascript/{.}.js" /}">
+	</script>
+  {/scripts}
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css"
+		integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54="
+		crossorigin="anonymous" />
+  <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+	    crossorigin="anonymous">
+  <link rel="stylesheet" href="{@url url="/static/css/blog.css" /}" />
+</head>
+<body>
+  <div class="layout">
+    <div class="menu">
+	  <div class="menu-section">
+        <div class="heading">
+		The Lone Pole
+		</div>
+	  </div>
+	</div>
+	<div class="content">

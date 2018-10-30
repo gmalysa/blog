@@ -1,0 +1,10 @@
+*.swp
+node_modules/
+sessions/
+config.json
+static/css
+static/javascript
+static/markdown
+static/images/latex
+default.log
+database.json
