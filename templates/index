@@ -1,19 +1,21 @@
 {>header /}
 
+{#articles}
 <div class="article-container">
   <div class="header">
-    <div class="date">
-      <span class="month">Nov</span>
-      <span class="day">15</span>
-	  <span class="year">2015</span>
-    </div>
+    <div class="title-icon">
+	</div>
     <div class="title">
-      <div class="title-text">Information Theory, Video Games, and You</div>
+      <div class="title-text">{title}</div>
+	  <div class="title-date">
+	    <span class="far fa-calendar-alt"></span> {day} {month} {year}
+      </div>
     </div>
   </div>
   <article>
-  {article|md|s}
+  {content|md|s}
   </article>
 </div>
+{/articles}
 
 {>footer /}
