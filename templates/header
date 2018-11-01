@@ -27,11 +27,59 @@
 </head>
 <body>
   <div class="layout">
+    <div class="logo">
+      <div class="title">
+        <a href="/">The Lone Pole</a>
+      </div>
+      <div class="subtitle underline">
+        Hardware. Software. Math.
+      </div>
+    </div>
+
     <div class="menu">
-	  <div class="menu-section">
-        <div class="heading">
-		The Lone Pole
-		</div>
-	  </div>
-	</div>
-	<div class="content">
+      <div class="section">
+        <div class="item">
+          <a href="/about">About</a>
+        </div>
+        <div class="item">
+          <a href="/projects">Projects</a>
+        </div>
+        <div class="item">
+          <a href="/publications">Publications</a>
+        </div>
+        <div class="item">
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="heading underline">
+          Recent Posts
+        </div>
+        <div class="item">
+          <a href="/">Information Theory ...</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="heading underline">
+          Popular Posts
+        </div>
+        <div class="item">
+          <a href="/">Information Theory ...</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="heading underline">
+          Links
+        </div>
+        <div class="item">
+          <a href="http://github.com/gmalysa">Github Profile</a>
+        </div>
+        <div class="item">
+          <a href="http://www.youtube.com/user/ButteryGreg">YouTube Channel</a>
+        </div>
+      </div>
+    </div>
+    <div class="content">
