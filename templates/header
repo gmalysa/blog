@@ -3,7 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{title}</title>
+  <link rel="shortcut icon" href="/static/images/thelonepole_favicon.png">
+  <title>
+  {?title}
+     {title} :: The Lone Pole
+  {:else}
+    The Lone Pole
+  {/title}</title>
   <script type="text/javascript"
           src="//cdnjs.cloudflare.com/ajax/libs/dustjs-linkedin/2.7.2/dust-core.min.js">
   </script>
