@@ -1,0 +1,7 @@
+{>header /}
+
+<div class="article-container">
+{content|s}
+</div>
+
+{>footer /}
