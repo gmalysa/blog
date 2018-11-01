@@ -91,6 +91,14 @@ migrations.up().then(function() {
 var showdown = require('showdown');
 var latex = require('./lib/latex.js');
 
+showdown.extension('addLineNumbers', function() {
+	return [{
+		type : 'output',
+		regex : /<code class="/g,
+		replace : '<code class="line-numbers '
+	}];
+});
+
 var showdown_converter = new showdown.Converter({
 	parseImgDimensions : true,
 	simplifiedAutoLink : true,
@@ -99,7 +107,7 @@ var showdown_converter = new showdown.Converter({
 	tables : true,
 	tasklists : true,
 	emoji : true,
-	extensions : ['latex']
+	extensions : ['latex', 'addLineNumbers']
 });
 function dust_markdown_filter(value) {
 	return showdown_converter.makeHtml(value);
