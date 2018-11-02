@@ -6,6 +6,9 @@
       <div class="title-text">{title}</div>
 	  <div class="title-date">
 	    <span class="far fa-calendar-alt"></span> {day} {month} {year}
+		{?isAdmin}
+		{~n}- <a href="/edit/{id}">Edit</a>
+		{/isAdmin}
       </div>
     </div>
   </div>

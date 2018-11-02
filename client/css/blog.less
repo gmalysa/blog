@@ -170,3 +170,46 @@ code {
 	padding: 1em;
 	text-align: right;
 }
+
+form {
+
+	div {
+		margin-bottom: 0.5rem;
+		display: flex;
+	}
+
+	label {
+		width: 8em;
+		display: inline-block;
+		margin-right: 1rem;
+		text-align: right;
+		padding-top: 0.4rem;
+	}
+
+	input {
+		padding: 0.4rem;
+		border-radius: @border-radius;
+		border: 1px solid @border;
+		background-color: rgb(34, 34, 34);
+		color: #fff;
+		flex-grow: 1;
+	}
+
+	textarea {
+		padding: 5px;
+		border-radius: @border-radius;
+		border: 1px solid @border;
+		background-color: rgb(34, 34, 34);
+		color: #fff;
+		flex-grow: 1;
+	}
+
+	input:disabled {
+		border: none;
+	}
+
+	input[type="submit"], input[type="button"] {
+		background-color: rgb(34, 34, 34);
+		flex-grow: 0;
+	}
+}

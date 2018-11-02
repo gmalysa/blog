@@ -10,6 +10,14 @@
   {:else}
     The Lone Pole
   {/title}</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-24668319-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+	gtag('config', 'UA-24668319-1');
+  </script>
   <script type="text/javascript"
           src="//cdnjs.cloudflare.com/ajax/libs/dustjs-linkedin/2.7.2/dust-core.min.js">
   </script>
@@ -92,5 +100,16 @@
           <a href="http://www.youtube.com/user/ButteryGreg">YouTube Channel</a>
         </div>
       </div>
+
+	  {?isAdmin}
+	    <div class="section">
+		  <div class="heading underline">
+		    Admin
+		  </div>
+		  <div class="item">
+		    <a href="/edit">New Post</a>
+		  </div>
+		</div>
+	  {/isAdmin}
     </div>
     <div class="content">

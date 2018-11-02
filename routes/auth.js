@@ -31,6 +31,9 @@ passport.use(new google({
 	});
 }));
 
+/**
+ * Add user info to the request, available in the output template
+ */
 var addUser = new fl.Chain(
 	function(env, after) {
 		if (env.req.user) {
@@ -42,6 +45,15 @@ var addUser = new fl.Chain(
 			});
 		}
 		after();
+	}
+);
+
+var requireAdmin = new fl.Chain(
+	function(env, after) {
+		if (!env.isAdmin)
+			env.$throw(new Error('You must be an admin to view this page'));
+		else
+			after();
 	}
 );
 
@@ -68,4 +80,5 @@ module.exports.init_routes = function(common) {
 	);
 
 	common.add_pre_hook(addUser, 'default');
+	common.add_pre_hook(requireAdmin, 'admin');
 }
