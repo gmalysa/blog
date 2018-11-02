@@ -1,6 +1,12 @@
     </div>
     <div class="footer">
     (c) 2011-2018, Greg Malysa
+	<br />
+	{?user}
+		Logged in as {user.displayName}. <a href="/auth/logout">Log out</a>
+	{:else}
+		<a href="/auth/google">Log in</a>
+	{/user}
     </div>
   </div>
 </body>

@@ -30,6 +30,15 @@ var defaults = {
 		database : '',
 		password : '',
 	},
+
+	// Google OAuth info
+	google : {
+		clientID : '',
+		clientSecret : '',
+	},
+
+	// Identify admins by google id
+	admin_g_id : 'invalid'
 };
 
 module.exports = _.extend({}, defaults, local);
