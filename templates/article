@@ -3,7 +3,7 @@
     <div class="title-icon">
 	</div>
     <div class="title">
-      <div class="title-text">{title}</div>
+      <div class="title-text"><a href="{url}">{title}</a></div>
 	  <div class="title-date">
 	    <span class="far fa-calendar-alt"></span> {day} {month} {year}
 		{?isAdmin}

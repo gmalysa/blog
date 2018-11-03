@@ -44,9 +44,27 @@ var projects = make_static('projects', 'Projects');
 var publications = make_static('publications', 'Publications');
 var contact = make_static('contact', 'Contact');
 
+var single = new fl.Chain(
+	function(env, after) {
+		after(env.req.params.slug);
+	},
+	posts.getBySlug,
+	function(env, after, post) {
+		env.$template('post');
+		env.$output({article : post});
+		after();
+	}
+);
+
 module.exports.init_routes = function(server) {
 	server.add_route('/', {
 		fn : index,
+		pre : ['default'],
+		post : ['default']
+	}, 'get');
+
+	server.add_route('/:year(\\d{4})/:month(\\d{1,2})/:slug', {
+		fn : single,
 		pre : ['default'],
 		post : ['default']
 	}, 'get');
