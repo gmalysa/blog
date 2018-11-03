@@ -75,9 +75,11 @@
         <div class="heading underline">
           Recent Posts
         </div>
-        <div class="item">
-          <a href="/">Information Theory ...</a>
-        </div>
+		{#recent}
+		  <div class="item">
+		    <a href="{url}">{title}</a>
+		  </div>
+		{/recent}
       </div>
 
       <div class="section">

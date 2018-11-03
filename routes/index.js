@@ -6,6 +6,9 @@ var posts = require('../lib/posts.js');
 
 const postsPerPage = 5;
 
+/**
+ * Index which also supports paginated views
+ */
 var index = new fl.Chain(
 	function(env, after) {
 		var page = parseInt(env.req.params.page);
@@ -23,6 +26,12 @@ var index = new fl.Chain(
 	}
 ).use_local_env(true);
 
+/**
+ * Create a chain for hosting a static page written in markdown
+ * @param[in] file The name of the file to use under static/markdown
+ * @param[in] title The page title to use
+ * @return Chain that can be added as the route handler for this page
+ */
 function make_static(file, title) {
 	return new fl.Chain(
 		function(env, after) {
@@ -39,11 +48,15 @@ function make_static(file, title) {
 	);
 }
 
+// Static content
 var about = make_static('about', 'About');
 var projects = make_static('projects', 'Projects');
 var publications = make_static('publications', 'Publications');
 var contact = make_static('contact', 'Contact');
 
+/**
+ * Route for displaying a single post
+ */
 var single = new fl.Chain(
 	function(env, after) {
 		after(env.req.params.slug);
@@ -52,6 +65,22 @@ var single = new fl.Chain(
 	function(env, after, post) {
 		env.$template('post');
 		env.$output({article : post});
+		after();
+	}
+);
+
+/**
+ * Handler for populating the recent posts, runs on every page
+ */
+var recent = new fl.Chain(
+	function(env, after) {
+		after(0, 5);
+	},
+	posts.getList,
+	function(env, after, posts) {
+		env.$output({
+			recent : posts
+		});
 		after();
 	}
 );
@@ -98,4 +127,6 @@ module.exports.init_routes = function(server) {
 		pre : ['default'],
 		post : ['default']
 	}, 'get');
+
+	server.add_pre_hook(recent, 'default');
 };
