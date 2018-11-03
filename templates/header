@@ -86,9 +86,11 @@
         <div class="heading underline">
           Popular Posts
         </div>
-        <div class="item">
-          <a href="/">Information Theory ...</a>
-        </div>
+	    {#popular}
+		  <div class="item">
+		    <a href="{url}">{title}</a>
+		  </div>
+		{/popular}
       </div>
 
       <div class="section">

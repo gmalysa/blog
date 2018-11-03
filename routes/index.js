@@ -65,8 +65,9 @@ var single = new fl.Chain(
 	function(env, after, post) {
 		env.$template('post');
 		env.$output({article : post});
-		after();
-	}
+		after(post);
+	},
+	posts.addView
 );
 
 /**
@@ -80,6 +81,22 @@ var recent = new fl.Chain(
 	function(env, after, posts) {
 		env.$output({
 			recent : posts
+		});
+		after();
+	}
+);
+
+/**
+ * Handler for populating the popular posts segment, runs on every page
+ */
+var popular = new fl.Chain(
+	function(env, after) {
+		after(5);
+	},
+	posts.getPopular,
+	function(env, after, posts) {
+		env.$output({
+			popular : posts
 		});
 		after();
 	}
@@ -129,4 +146,5 @@ module.exports.init_routes = function(server) {
 	}, 'get');
 
 	server.add_pre_hook(recent, 'default');
+	server.add_pre_hook(popular, 'default');
 };
