@@ -111,6 +111,36 @@ a {
 	}
 }
 
+.pagination {
+	background: #000;
+	padding: 7px;
+	position: relative;
+	border: 1px solid @border;
+	border-radius: @border-radius;
+	margin-bottom: 0.5em;
+	display:flex;
+
+	.older {
+		display: inline-block;
+		flex-grow: 1;
+		text-align: left;
+	}
+
+	.newer {
+		display: inline-block;
+		flex-grow: 1;
+		text-align: right;
+	}
+
+	a {
+		color: rgb(128, 128, 128);
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
 .header {
 	display: block;
 

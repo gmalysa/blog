@@ -4,4 +4,23 @@
   {>article /}
 {/articles}
 
+<div class="pagination">
+{! next page is older posts !}
+{?next}
+  <span class="older">
+  <a href="/page/{next}">
+    <span class="fas fa-arrow-alt-circle-left"></span> Older posts
+  </a>
+{/next}
+
+{! previous page is newer posts !}
+{?prev}
+  <span class="newer">
+  <a href="/page/{prev}">
+    Newer posts <span class="fas fa-arrow-alt-circle-right"></span>
+  </a>
+  </span>
+{/prev}
+</div>
+
 {>footer /}

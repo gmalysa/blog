@@ -16,12 +16,26 @@ var index = new fl.Chain(
 		if (isNaN(page))
 			page = 0;
 
+		env.page = page;
 		after(page * postsPerPage, postsPerPage);
 	},
 	posts.getList,
 	function(env, after, postList) {
 		env.$template('index');
 		env.$output({articles : postList});
+		after();
+	},
+	posts.getTotal,
+	function(env, after, count) {
+		var output = {};
+		if (env.page > 0) {
+			output.prev = env.page-1;
+		}
+		if ((env.page+1) * postsPerPage < count) {
+			output.next = env.page + 1;
+		}
+
+		env.$output(output);
 		after();
 	}
 ).use_local_env(true);
