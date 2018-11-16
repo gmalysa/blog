@@ -1,0 +1,9 @@
+{>header /}
+
+<div class="article-container">
+{#files}
+  <a href="/static/images/{.}">{.}</a><br />
+{/files}
+</div>
+
+{>footer /}

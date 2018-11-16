@@ -25,6 +25,7 @@ var sessionFileStore = require('session-file-store')(expressSession);
 var passport = require('passport');
 var siosession = require('express-socket.io-session');
 var siopassport = require('passport.socketio');
+var fileUpload = require('express-fileupload');
 
 // local modules
 var logger = require('./logger');
@@ -146,6 +147,7 @@ var sessionMiddleware = expressSession({
 // Configure middleware that runs before route handlers
 server.use(config.static_path, express.static(config.static_dir));
 server.use(sessionMiddleware);
+server.use(fileUpload());
 server.use(bodyParser.urlencoded({extended : false}));
 server.use(bodyParser.json({limit : '1mb'}));
 server.use(passport.initialize());

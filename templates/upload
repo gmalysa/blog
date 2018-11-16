@@ -1,0 +1,19 @@
+{>header /}
+
+<div class="article-container">
+  <form method="POST" action="/upload" encType="multipart/form-data">
+    <div>
+	  <label for="filename">Name</label>
+	  <input type="text" name="filename" />
+	</div>
+	<div>
+	  <label for="upload">File</label>
+	  <input type="file" name="upload" />
+	</div>
+	<div style="display: block; text-align: right;">
+	  <input type="submit" value="Upload" />
+	</div>
+  </form>
+</div>
+
+{>footer /}

@@ -113,6 +113,12 @@
 		  <div class="item">
 		    <a href="/edit">New Post</a>
 		  </div>
+		  <div class="item">
+		    <a href="/upload">New Upload</a>
+		  </div>
+		  <div class="item">
+		    <a href="/uploads">All Uploads</a>
+		  </div>
 		</div>
 	  {/isAdmin}
     </div>

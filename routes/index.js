@@ -3,6 +3,7 @@ var fs = require('fs');
 var fl = require('flux-link');
 
 var posts = require('../lib/posts.js');
+var config = require('../config.js');
 
 const postsPerPage = 5;
 
@@ -116,6 +117,18 @@ var popular = new fl.Chain(
 	}
 );
 
+/**
+ * Serve images by remapping wordpress-format urls onto the static folder
+ */
+var wp_image = new fl.Chain(
+	function(env, after) {
+		env.$raw();
+		env.res.sendFile(env.req.params.filename, {
+			root : __dirname + '/../' + config.static_dir + '/images/'
+		}, env.$check(after));
+	}
+);
+
 module.exports.init_routes = function(server) {
 	server.add_route('/', {
 		fn : index,
@@ -157,6 +170,12 @@ module.exports.init_routes = function(server) {
 		fn : contact,
 		pre : ['default'],
 		post : ['default']
+	}, 'get');
+
+	server.add_route('/wp-content/uploads/:year(\\d{4})/:month(\\d{1,2})/:filename', {
+		fn : wp_image,
+		pre : ['default'],
+		post : ['default'],
 	}, 'get');
 
 	server.add_pre_hook(recent, 'default');
