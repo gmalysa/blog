@@ -23,8 +23,6 @@ var upload_form = new fl.Chain(
  */
 var upload = new fl.Chain(
 	function(env, after) {
-		console.log(env.req);
-
 		if (Object.keys(env.req.files).length == 0) {
 			env.$throw(new Error('No file uploaded'));
 			return;
