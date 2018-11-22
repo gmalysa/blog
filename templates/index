@@ -11,6 +11,7 @@
   <a href="/page/{next}">
     <span class="fas fa-arrow-alt-circle-left"></span> Older posts
   </a>
+  </span>
 {/next}
 
 {! previous page is newer posts !}
