@@ -1,10 +1,14 @@
 ## Current Projects
+* Hardware/software design for an "electronic board game" system using capacitive touch, near-field
+  communications, and a custom designed PCB with [demo video here](https://www.youtube.com/watch?v=tij-bQB88B0)
 * Developer and Admin for the [Learn Dota 2 League](http://ld2l.gg)
-* Lead Developer and Sysadmin for the [Star Wars Combine](http://www.swcombine.com)
 
 ## Past Projects
 
 ### Research
+* [Hidden Markov Model-based Gesture Recognition with FMCW Radar](https://ieeexplore.ieee.org/abstract/document/7905995),
+  an experiment in using automotive FMCW radar to detect and categorize coarse hand gestures based on
+  micro-Doppler measurements
 * [qvz](https://github.com/mikelhernaez/qvz), a high performance lossy compression algorithm for
   quality scores in genomic data ([Bioinformatics
   paper](http://bioinformatics.oxfordjournals.org/content/early/2015/05/28/bioinformatics.btv330.abstract))
@@ -38,6 +42,7 @@
   LISP-like interpreter based on the original McCarthy paper. The goal is just to explore the
   implementation of the pieces of an interpreter or compiler and understand more about how
   programming languages work.
+* Lead Developer and Sysadmin for the [Star Wars Combine](http://www.swcombine.com)
 
 ### Undergrad Stuff
 * [Acoustic Air Modem](https://github.com/gmalysa/ece4760-acoustic-modem) - Project for [ECE
