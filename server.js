@@ -23,8 +23,6 @@ var bodyParser = require('body-parser');
 var expressSession = require('express-session');
 var sessionFileStore = require('session-file-store')(expressSession);
 var passport = require('passport');
-var siosession = require('express-socket.io-session');
-var siopassport = require('passport.socketio');
 var fileUpload = require('express-fileupload');
 
 // local modules
@@ -162,14 +160,6 @@ var ci = new common.init(server, {
 	route_dir		: config.route_dir,
 	port			: config.port
 });
-
-// Connect socket.io middleware to interface with express middleware
-ci.io.use(siosession(sessionMiddleware));
-ci.io.use(siopassport.authorize({
-	key : 'connect.sid',
-	secret : config.session_secret,
-	store : sessionStorage
-}));
 
 // Add helpers and hooks
 ci.add_pre_hook(fl.mkfn(init_db, 0));
