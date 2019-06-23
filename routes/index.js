@@ -70,6 +70,19 @@ var publications = make_static('publications', 'Publications');
 var contact = make_static('contact', 'Contact');
 
 /**
+ * Helper function to get the description string for a post, which is just the first paragraph
+ * up to a length of 256 characters.
+ */
+function getDescription(text) {
+	var index = text.indexOf("\r\n\r\n");
+
+	if (index > 500)
+		index = 500;
+
+	return text.substring(0, index).replace(/\r\n/g, " ");
+}
+
+/**
  * Route for displaying a single post
  */
 var single = new fl.Chain(
@@ -78,8 +91,10 @@ var single = new fl.Chain(
 	},
 	posts.getBySlug,
 	function(env, after, post) {
+		var desc = getDescription(post.content);
+		console.log(desc);
 		env.$template('post');
-		env.$output({article : post});
+		env.$output({article : post, description : desc});
 		after(post);
 	},
 	posts.addView
