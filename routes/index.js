@@ -92,7 +92,6 @@ var single = new fl.Chain(
 	posts.getBySlug,
 	function(env, after, post) {
 		var desc = getDescription(post.content);
-		console.log(desc);
 		env.$template('post');
 		env.$output({article : post, description : desc});
 		after(post);
