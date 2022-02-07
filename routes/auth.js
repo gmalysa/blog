@@ -4,7 +4,7 @@
 
 var fl = require('flux-link');
 var passport = require('passport');
-var google = require('passport-google-oauth').OAuth2Strategy;
+var google = require('passport-google-oauth2').Strategy;
 
 var logger = require('../logger.js');
 var config = require('../config.js');
@@ -61,7 +61,7 @@ module.exports.init_routes = function(common) {
 	common.server.get(
 		'/auth/google',
 		passport.authenticate('google', {
-			scope : ['openid profile']
+			scope : ['profile', 'email']
 		})
 	);
 

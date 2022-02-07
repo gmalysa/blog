@@ -20,7 +20,7 @@ var defaults = {
 
 	// Server config settings
 	port : 8124,
-	base_url : 'http://localhost:8124',
+	base_url : 'https://localhost',
 	session_secret : 'thisisasecret',
 
 	// MySQL settings
