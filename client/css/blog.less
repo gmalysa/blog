@@ -1,9 +1,14 @@
 @border: rgb(96, 96, 96);
 @border-radius: 5px;
+@responsive-width: 70rem;
+
+html {
+	font-size: 1.3rem;
+}
 
 body {
 	background-color: rgb(68, 68, 68);
-	color: rgb(206, 206, 206);
+	color: #ddd;
 }
 
 a {
@@ -48,7 +53,6 @@ a {
 
 .menu {
 	float: left;
-	width: 15em;
 	top: 0;
 	bottom: 0;
 	margin-left: 0.5rem;
@@ -88,10 +92,41 @@ a {
 	}
 }
 
-.content {
-	background-color: rgb(34, 34, 34);
-	margin-left: 16em;
-	margin-right: 0.5em;
+@media (min-width: @responsive-width) {
+	.content {
+		background-color: rgb(34, 34, 34);
+		margin-left: 14em;
+		margin-right: 0.5em;
+	}
+
+	.menu {
+		width: 13em;
+	}
+}
+
+@media (max-width: @responsive-width) {
+	.content {
+		background-color: rgb(34, 34, 34);
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+	}
+
+	.menu {
+		margin-right: 0.5rem;
+		float: none;
+
+		.section {
+			display: none;
+		}
+		.section.essential {
+			display: block;
+			text-align: center;
+			.item {
+				display: inline-block;
+				width: 19%;
+			}
+		}
+	}
 }
 
 .article-container {
@@ -101,10 +136,12 @@ a {
 	border: 1px solid @border;
 	border-radius: @border-radius;
 	margin-bottom: 0.5em;
+	text-align: justify;
+
 
 	a {
-		color: #888;
-		background-color: #222;
+		color: #bbb;
+		background-color: #333;
 	}
 
 	a:hover {
@@ -198,12 +235,11 @@ a {
 
 code {
 	background-color: rgb(27, 36, 38);
-	font-size: 0.85em;
 	padding: 2px;
 }
 
 pre > code {
-	font-size: 1em;
+	font-size: 0.7em;
 	padding: 0;
 }
 

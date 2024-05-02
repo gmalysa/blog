@@ -65,7 +65,7 @@
     </div>
 
     <div class="menu">
-      <div class="section">
+      <div class="section essential">
 	    <div class="item">
 		  <a href="/">Blog</a>
 		</div>
