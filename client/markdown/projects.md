@@ -1,6 +1,6 @@
 ## Current Projects
-* Hardware/software design for an "electronic board game" system using capacitive touch, near-field
-  communications, and a custom designed PCB with [demo video here](https://www.youtube.com/watch?v=tij-bQB88B0)
+* Lots and lots of programming in C
+* Factorio mod to make [assembler operation more complicated](https://github.com/gmalysa/factorio-manual-assembly). Right now it's a tech demo skeleton and isn't even a playable mod
 * Developer and Admin for the [Learn Dota 2 League](http://ld2l.gg)
 
 ## Past Projects
@@ -18,7 +18,9 @@
 	* Simulation and numerical analysis
 	* Frequency estimation and super-resolution
 
-### Programming
+### Design + Implementation
+* Hardware/software design for an "electronic board game" prototype system using capacitive touch, near-field
+  communications, and a custom designed PCB with [demo video here](https://www.youtube.com/watch?v=tij-bQB88B0)
 * Node.js packages (not actively maintained due to time constraints)
 	* [db-filters](https://github.com/gmalysa/db-filters) - A database-based “filtering” engine,
 	  originally used to generate WHERE clauses for SQL from complex datatypes automatically, this
@@ -51,4 +53,4 @@
 	\- [Video](http://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/s2010/gjm76_asr96/AcousticModem.MP4)
 * [CUAUV](http://www.cuauv.org/) - Undergraduate project team for the annual AUVSI autonomous
   underwater vehicle competition (now called RoboSub). I worked on the Hydrophones system and
-  developed the system used in competition from 2010 through at least 2013, running on an ADSP2139.
+  developed the system used in competition from 2010 through at least 2013, running on an ADSP-21369.
